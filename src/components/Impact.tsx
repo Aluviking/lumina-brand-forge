@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { TrendingUp, Users, Zap, Award } from "lucide-react";
+import { TrendingUp, Users, Zap, Award, ArrowRight } from "lucide-react";
 
 const stats = [
-  { icon: TrendingUp, value: 350, suffix: "%", label: "Average ROI Increase" },
-  { icon: Users, value: 2, suffix: "M+", label: "Audience Reached" },
-  { icon: Zap, value: 500, suffix: "+", label: "Campaigns Launched" },
-  { icon: Award, value: 98, suffix: "%", label: "Client Satisfaction" },
+  { icon: TrendingUp, value: 350, suffix: "%", label: "Aumento de ROI" },
+  { icon: Users, value: 2, suffix: "M+", label: "Audiencia Alcanzada" },
+  { icon: Zap, value: 500, suffix: "+", label: "Campañas Lanzadas" },
+  { icon: Award, value: 98, suffix: "%", label: "Clientes Satisfechos" },
 ];
 
 const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
@@ -45,30 +45,24 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
 const Impact = () => {
   return (
-    <section className="relative py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
-      </div>
-
+    <section className="relative py-20 overflow-hidden">
       <div className="container relative z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-            Marketing <span className="gradient-text">Impact</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Nuestro <span className="gradient-text">Impacto</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Numbers that speak for themselves. Our data-driven approach delivers
-            measurable results for every client.
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Resultados medibles que hablan por sí solos.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -76,27 +70,40 @@ const Impact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative group"
+              className="text-center p-6 rounded-2xl glass-card"
             >
-              <div className="text-center p-8 rounded-2xl glass-card hover:border-primary/50 transition-all duration-300">
-                {/* Icon */}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mb-6 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors">
-                  <stat.icon className="w-8 h-8 text-primary" />
-                </div>
-
-                {/* Value */}
-                <div className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
-                  <Counter value={stat.value} suffix={stat.suffix} />
-                </div>
-
-                {/* Label */}
-                <p className="text-muted-foreground text-sm font-medium">
-                  {stat.label}
-                </p>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mb-4">
+                <stat.icon className="w-6 h-6 text-primary" />
               </div>
+
+              <div className="text-3xl font-display font-bold gradient-text mb-1">
+                <Counter value={stat.value} suffix={stat.suffix} />
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                {stat.label}
+              </p>
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Únete a Nuestros Clientes
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

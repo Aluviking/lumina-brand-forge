@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Sparkles } from "lucide-react";
 
 const LeadForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,6 @@ const LeadForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -28,34 +27,34 @@ const LeadForm = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
-      {/* Background Elements */}
+    <section id="contact" className="relative py-24 overflow-hidden">
+      {/* Highlighted Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-secondary/10 to-primary/5" />
       <motion.div
-        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[150px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[200px]"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
-      <motion.div
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[150px]"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
 
       <div className="container relative z-10 px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Let's <span className="gradient-text">Connect</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-6">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Estrategia Gratuita</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+              ¿Listo para <span className="gradient-text">Crecer</span>?
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Ready to transform your brand? Tell us about your project and we'll
-              craft a strategy just for you.
+            <p className="text-muted-foreground">
+              Cuéntanos sobre tu proyecto y te contactaremos en 24 horas.
             </p>
           </motion.div>
 
@@ -65,11 +64,8 @@ const LeadForm = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative p-8 md:p-12 rounded-3xl glass-card"
+            className="relative p-8 rounded-3xl bg-card/80 backdrop-blur-xl border-2 border-primary/30 shadow-2xl shadow-primary/20"
           >
-            {/* Gradient Border Effect */}
-            <div className="absolute inset-0 rounded-3xl gradient-border pointer-events-none" />
-
             {isSubmitted ? (
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -78,21 +74,21 @@ const LeadForm = () => {
               >
                 <CheckCircle className="w-16 h-16 text-primary mb-4" />
                 <h3 className="text-2xl font-display font-bold text-foreground mb-2">
-                  Message Sent!
+                  ¡Mensaje Enviado!
                 </h3>
                 <p className="text-muted-foreground">
-                  We'll get back to you within 24 hours.
+                  Te contactaremos en 24 horas.
                 </p>
               </motion.div>
             ) : (
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label
                       htmlFor="name"
                       className="block text-sm font-medium text-foreground mb-2"
                     >
-                      Your Name
+                      Nombre
                     </label>
                     <input
                       type="text"
@@ -101,8 +97,8 @@ const LeadForm = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                      placeholder="Tu nombre"
                     />
                   </div>
                   <div>
@@ -110,7 +106,7 @@ const LeadForm = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-foreground mb-2"
                     >
-                      Email Address
+                      Email
                     </label>
                     <input
                       type="email"
@@ -119,8 +115,8 @@ const LeadForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                      placeholder="john@company.com"
+                      className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                      placeholder="tu@email.com"
                     />
                   </div>
                 </div>
@@ -130,7 +126,7 @@ const LeadForm = () => {
                     htmlFor="brand"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Brand / Company
+                    Marca / Empresa
                   </label>
                   <input
                     type="text"
@@ -139,8 +135,8 @@ const LeadForm = () => {
                     value={formData.brand}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="Your Brand Name"
+                    className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="Nombre de tu marca"
                   />
                 </div>
 
@@ -149,7 +145,7 @@ const LeadForm = () => {
                     htmlFor="objective"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Project Objective
+                    Objetivo
                   </label>
                   <textarea
                     id="objective"
@@ -157,19 +153,19 @@ const LeadForm = () => {
                     value={formData.objective}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
-                    placeholder="Tell us about your goals and what you'd like to achieve..."
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                    placeholder="¿Qué te gustaría lograr?"
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold text-lg flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/25 transition-shadow"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/30"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Send Message
+                  Enviar Mensaje
                   <Send className="w-5 h-5" />
                 </motion.button>
               </div>
