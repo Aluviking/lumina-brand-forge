@@ -1,57 +1,49 @@
 import { motion } from "framer-motion";
-import { Camera, Palette, Rocket, Film } from "lucide-react";
+import { Camera, Palette, Rocket, Film, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Palette,
-    title: "Content Creation",
-    description: "Compelling visuals and copy that tell your brand story and drive engagement across all platforms.",
-    gradient: "from-primary to-secondary",
+    title: "Creación de Contenido",
+    description: "Visuales y copy que cuentan tu historia y generan engagement.",
   },
   {
     icon: Camera,
-    title: "Photography",
-    description: "Stunning product and lifestyle photography that showcases your brand in its best light.",
-    gradient: "from-secondary to-accent",
+    title: "Fotografía",
+    description: "Fotografía profesional que muestra tu marca en su mejor luz.",
   },
   {
     icon: Rocket,
     title: "Brand Boosting",
-    description: "Strategic campaigns that amplify your reach and connect with your target audience.",
-    gradient: "from-accent to-primary",
+    description: "Campañas estratégicas que amplifican tu alcance.",
   },
   {
     icon: Film,
-    title: "Digital Production",
-    description: "High-quality video content that captivates viewers and elevates your digital presence.",
-    gradient: "from-primary via-secondary to-accent",
+    title: "Producción Digital",
+    description: "Contenido de video que cautiva y eleva tu presencia digital.",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
-
+    <section id="services" className="relative py-24 overflow-hidden">
       <div className="container relative z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-            Our <span className="gradient-text">Services</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Nuestros <span className="gradient-text">Servicios</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We offer a comprehensive suite of digital marketing services tailored
-            to elevate your brand and drive measurable results.
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Soluciones de marketing digital diseñadas para elevar tu marca.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -61,41 +53,41 @@ const Services = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <motion.div
-                className="group relative h-full p-8 rounded-2xl glass-card hover:border-primary/50 transition-all duration-300 overflow-hidden"
-                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative h-full p-6 rounded-2xl glass-card hover:border-primary/50 transition-all duration-300"
+                whileHover={{ y: -4 }}
               >
-                {/* Gradient Overlay on Hover */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${service.gradient} transition-opacity duration-300`} />
-                
-                {/* Icon */}
-                <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-primary/25 transition-shadow`}>
-                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
 
-                {/* Content */}
-                <h3 className="relative text-xl font-display font-bold text-foreground mb-3">
+                <h3 className="text-lg font-display font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="relative text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm">
                   {service.description}
                 </p>
-
-                {/* Hover Arrow */}
-                <motion.div
-                  className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  initial={{ x: -10 }}
-                  whileHover={{ x: 0 }}
-                >
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${service.gradient} flex items-center justify-center`}>
-                    <svg className="w-5 h-5 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </motion.div>
               </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Solicita Tu Propuesta
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
