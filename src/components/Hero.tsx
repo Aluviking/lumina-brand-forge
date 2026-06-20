@@ -150,7 +150,7 @@ const Hero = () => {
               whileTap={{ scale: 0.98 }}
             >
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/40 transition-colors">
-                <img src={handIcon} alt="" className="w-6 h-6 brightness-0 invert" />
+                <img src={handIcon} alt="" className="w-6 h-6 object-contain" />
               </div>
               Ver Showreel
             </motion.a>
