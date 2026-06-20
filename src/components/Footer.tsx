@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail } from "lucide-react";
+import logo1 from "@/assets/logo-1.png";
+import logo2 from "@/assets/logo-2.png";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -19,8 +21,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-6 mb-6"
           >
-            <img src="/img/logo-1.png" alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
-            <img src="/img/logo-2.png" alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
+            <img src={logo1} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
+            <img src={logo2} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
           </motion.div>
           
           <p className="text-lg font-display font-semibold text-foreground mb-1">

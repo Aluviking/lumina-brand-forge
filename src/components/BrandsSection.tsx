@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
+import logo1 from "@/assets/logo-1.png";
+import logo2 from "@/assets/logo-2.png";
 
 const brandLogos = [
-  { src: "/img/logo-1.png", alt: "Logo 1" },
-  { src: "/img/logo-2.png", alt: "Logo 2" },
-  { src: "/img/logo-1.png", alt: "Logo 1" },
-  { src: "/img/logo-2.png", alt: "Logo 2" },
-  { src: "/img/logo-1.png", alt: "Logo 1" },
-  { src: "/img/logo-2.png", alt: "Logo 2" },
+  { src: logo1, alt: "Logo 1" },
+  { src: logo2, alt: "Logo 2" },
+  { src: logo1, alt: "Logo 1" },
+  { src: logo2, alt: "Logo 2" },
+  { src: logo1, alt: "Logo 1" },
+  { src: logo2, alt: "Logo 2" },
 ];
 
 const BrandsSection = () => {
