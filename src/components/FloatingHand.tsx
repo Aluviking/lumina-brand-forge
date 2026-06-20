@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import handIcon from "@/assets/hand-icon.png";
+import handIcon from "@/assets/ffff.png";
 
 const FloatingHand = () => {
   const { scrollYProgress } = useScroll();
@@ -16,8 +16,8 @@ const FloatingHand = () => {
       <img
         src={handIcon}
         alt=""
-        className="w-12 h-12 md:w-16 md:h-16 object-contain"
-        style={{ mixBlendMode: "screen", filter: "invert(1)" }}
+        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg"
+        style={{ mixBlendMode: "screen" }}
       />
     </motion.div>
   );
