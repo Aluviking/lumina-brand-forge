@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Camera, Palette, Rocket, Film, ArrowRight } from "lucide-react";
+import { Palette, Camera, Megaphone, Film, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Palette,
-    title: "Creación de Contenido",
-    description: "Visuales y copy que cuentan tu historia y generan engagement.",
+    title: "ESTRATEGIA",
+    description: "estrategia enfocada en objetivos reales medibles y escalables",
   },
   {
     icon: Camera,
-    title: "Fotografía",
-    description: "Fotografía profesional que muestra tu marca en su mejor luz.",
+    title: "CONTENIDO",
+    description: "produccion audiovisual profesional de impacto.",
   },
   {
-    icon: Rocket,
-    title: "Brand Boosting",
-    description: "Campañas estratégicas que amplifican tu alcance.",
+    icon: Megaphone,
+    title: "PAUTA - ADS",
+    description: "proyeccion de pauta optimizada con ia",
   },
   {
     icon: Film,
-    title: "Producción Digital",
-    description: "Contenido de video que cautiva y eleva tu presencia digital.",
+    title: "PROCESOS DE IA",
+    description: "automatizacion de procesos con implementos de ia.",
   },
 ];
 

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BrandsSection from "@/components/BrandsSection";
 import Services from "@/components/Services";
+import MetodoAcelera from "@/components/MetodoAcelera";
 import VideoShowcase from "@/components/VideoShowcase";
 import Impact from "@/components/Impact";
 import LeadForm from "@/components/LeadForm";
@@ -22,6 +23,7 @@ const Index = () => {
         <Hero />
         <BrandsSection />
         <Services />
+        <MetodoAcelera />
         <VideoShowcase />
         <Impact />
         <LeadForm />

@@ -104,12 +104,15 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-bold leading-tight mb-2">
-              Tu marca merece
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 uppercase tracking-wide">
+              Somos tu{" "}
+              <span className="gradient-text">Ecosistema Digital</span>
+              <br />
+              de crecimiento en redes sociales
+              <br />
+              complementado por{" "}
+              <span className="gradient-text">IA.</span>
             </h1>
-            <span className="block text-5xl md:text-7xl lg:text-9xl font-script gradient-text mb-4">
-              destacar
-            </span>
           </motion.div>
 
           <motion.p
@@ -134,7 +137,7 @@ const Hero = () => {
               whileTap={{ scale: 0.98 }}
             >
               <span className="relative z-10 flex items-center gap-2">
-                Impulsa Tu Marca
+                asesoria gratis
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </motion.a>
