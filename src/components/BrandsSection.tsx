@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 
-const brands = [
-  "ALESSI",
-  "Glossier",
-  "Unilever",
-  "THE BODY SHOP",
-  "Freshly",
-  "Flying Tiger",
-  "VANS",
+const brandLogos = [
+  { src: "/img/logo-1.png", alt: "Logo 1" },
+  { src: "/img/logo-2.png", alt: "Logo 2" },
+  { src: "/img/logo-1.png", alt: "Logo 1" },
+  { src: "/img/logo-2.png", alt: "Logo 2" },
+  { src: "/img/logo-1.png", alt: "Logo 1" },
+  { src: "/img/logo-2.png", alt: "Logo 2" },
 ];
 
 const BrandsSection = () => {
@@ -57,17 +56,16 @@ const BrandsSection = () => {
               ease: "linear",
             }}
           >
-            {[...brands, ...brands, ...brands].map((brand, index) => (
+            {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
               <div
                 key={index}
-                className="text-2xl md:text-3xl font-bold text-muted-foreground/60 hover:text-foreground transition-colors whitespace-nowrap select-none"
-                style={{
-                  fontFamily: index % 3 === 0 ? "'Playfair Display', serif" : 
-                             index % 3 === 1 ? "'Dancing Script', cursive" : 
-                             "'Inter', sans-serif",
-                }}
+                className="flex-shrink-0 select-none"
               >
-                {brand}
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </motion.div>
