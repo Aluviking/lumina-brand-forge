@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import handIcon from "@/assets/hand-icon.png";
 
 const Hero = () => {
   return (
@@ -149,7 +150,7 @@ const Hero = () => {
               whileTap={{ scale: 0.98 }}
             >
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/40 transition-colors">
-                <Play className="w-4 h-4 fill-current" />
+                <img src={handIcon} alt="" className="w-6 h-6 brightness-0 invert" />
               </div>
               Ver Showreel
             </motion.a>
