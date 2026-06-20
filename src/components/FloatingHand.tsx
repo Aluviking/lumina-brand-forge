@@ -1,9 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import handIcon from "@/assets/hand-icon.png";
 
 const FloatingHand = () => {
   const { scrollYProgress } = useScroll();
-  
+
   const y = useTransform(scrollYProgress, [0, 1], [0, 800]);
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [0, 15, -10]);
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [1, 1, 1, 0]);
@@ -14,9 +13,10 @@ const FloatingHand = () => {
       style={{ y, rotate, opacity }}
     >
       <img
-        src={handIcon}
+        src="/img/ffff.png"
         alt=""
-        className="w-12 h-12 md:w-16 md:h-16 brightness-0 invert opacity-80"
+        className="w-12 h-12 md:w-16 md:h-16 object-contain"
+        style={{ mixBlendMode: "screen" }}
       />
     </motion.div>
   );

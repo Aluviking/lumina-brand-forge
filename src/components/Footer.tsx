@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Mail } from "lucide-react";
-import logo from "@/assets/artmony-logo.png";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -18,9 +17,10 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4"
+            className="flex items-center gap-6 mb-6"
           >
-            <img src={logo} alt="Artmony Agencia" className="h-12 w-auto" />
+            <img src="/img/logo-1.png" alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
+            <img src="/img/logo-2.png" alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
           </motion.div>
           
           <p className="text-lg font-display font-semibold text-foreground mb-1">
