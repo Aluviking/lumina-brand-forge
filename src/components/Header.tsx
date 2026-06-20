@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/artmony-logo.png";
 
 const menuItems = [
   { name: "Content Creation", href: "#services" },
@@ -45,9 +44,10 @@ const Header = () => {
             >
               <div className="absolute inset-0 blur-xl bg-primary/30 rounded-full" />
               <img
-                src={logo}
+                src="/img/logo-1.png"
                 alt="Artmony Agencia"
-                className="relative h-12 w-auto"
+                className="relative h-12 w-auto object-contain"
+                style={{ mixBlendMode: "screen" }}
               />
             </motion.div>
           </div>

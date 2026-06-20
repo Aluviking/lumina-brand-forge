@@ -13,10 +13,10 @@ const FloatingHand = () => {
       style={{ y, rotate, opacity }}
     >
       <img
-        src="/img/ffff.png"
+        src="/img/hand-icon.png"
         alt=""
         className="w-12 h-12 md:w-16 md:h-16 object-contain"
-        style={{ mixBlendMode: "screen" }}
+        style={{ mixBlendMode: "screen", filter: "invert(1)" }}
       />
     </motion.div>
   );
