@@ -21,8 +21,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex items-center gap-6 mb-6"
           >
-            <img src={logo1} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
-            <img src={logo2} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} />
+            <img src={logo1} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} loading="lazy" />
+            <img src={logo2} alt="Logo" className="h-10 w-auto object-contain" style={{ mixBlendMode: "screen" }} loading="lazy" />
           </motion.div>
           
           <p className="text-lg font-display font-semibold text-foreground mb-1">

@@ -67,6 +67,7 @@ const BrandsSection = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className="h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  loading="lazy"
                 />
               </div>
             ))}

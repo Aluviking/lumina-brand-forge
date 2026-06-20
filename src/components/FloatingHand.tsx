@@ -16,8 +16,9 @@ const FloatingHand = () => {
       <img
         src={handIcon}
         alt=""
-        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg"
+        className="w-10 h-10 md:w-14 md:h-14 object-contain"
         style={{ mixBlendMode: "screen" }}
+        loading="eager"
       />
     </motion.div>
   );
